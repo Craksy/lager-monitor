@@ -1,0 +1,10 @@
+C:\Users\45225\source\repos\LagerMonitor\LagerMonitor\bin\Debug\LagerMonitor.exe.config
+C:\Users\45225\source\repos\LagerMonitor\LagerMonitor\bin\Debug\LagerMonitor.exe
+C:\Users\45225\source\repos\LagerMonitor\LagerMonitor\bin\Debug\LagerMonitor.pdb
+C:\Users\45225\source\repos\LagerMonitor\LagerMonitor\obj\Debug\LagerMonitor.csprojAssemblyReference.cache
+C:\Users\45225\source\repos\LagerMonitor\LagerMonitor\obj\Debug\LagerMonitor.Form1.resources
+C:\Users\45225\source\repos\LagerMonitor\LagerMonitor\obj\Debug\LagerMonitor.Properties.Resources.resources
+C:\Users\45225\source\repos\LagerMonitor\LagerMonitor\obj\Debug\LagerMonitor.csproj.GenerateResource.cache
+C:\Users\45225\source\repos\LagerMonitor\LagerMonitor\obj\Debug\LagerMonitor.csproj.CoreCompileInputs.cache
+C:\Users\45225\source\repos\LagerMonitor\LagerMonitor\obj\Debug\LagerMonitor.exe
+C:\Users\45225\source\repos\LagerMonitor\LagerMonitor\obj\Debug\LagerMonitor.pdb
