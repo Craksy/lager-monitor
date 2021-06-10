@@ -49,8 +49,36 @@ namespace LagerMonitor
                     outsideHum = fetchedDouble;
                     RefreshLabel(outsideHum.ToString()+"%", OutsideHum_label);
                 }
+
+                MonitorService.ArrayOfString stringarray;
+
+                stringarray = client.StockItemsOverMax();
+                RefreshBox(stringarray, stockOverMax_Listbox);
+
+                stringarray = client.StockItemsUnderMin();
+                RefreshBox(stringarray, stockUnderMin_Listbox);
+
+                stringarray = client.StockItemsMostSold();
+                RefreshBox(stringarray, stockMostSold_Listbox);
+
                 Thread.Sleep(60000);
 
+            }
+        }
+
+        private void RefreshBox(MonitorService.ArrayOfString newarray, ListBox box)
+        {
+            if (box.InvokeRequired)
+            {
+                box.Invoke(new Action(() => RefreshBox(newarray, box)));
+            }
+            else
+            {
+                box.Items.Clear();
+                foreach(var item in newarray)
+                {
+                    box.Items.Add(item);
+                }
             }
         }
 
