@@ -42,14 +42,14 @@
             this.label17 = new System.Windows.Forms.Label();
             this.temp_panel = new System.Windows.Forms.Panel();
             this.outside_panel = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.OutsideHum_label = new System.Windows.Forms.Label();
+            this.OutsideTemp_label = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.indside_panel = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.StockHum_label = new System.Windows.Forms.Label();
+            this.StockTemp_label = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -85,7 +85,7 @@
             this.panel1.Controls.Add(this.lagerstatus_panel);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1180, 594);
             this.panel1.TabIndex = 0;
@@ -97,7 +97,7 @@
             this.right_panel.Controls.Add(this.temp_panel);
             this.right_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.right_panel.Location = new System.Drawing.Point(525, 0);
-            this.right_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.right_panel.Margin = new System.Windows.Forms.Padding(4);
             this.right_panel.Name = "right_panel";
             this.right_panel.Size = new System.Drawing.Size(655, 594);
             this.right_panel.TabIndex = 1;
@@ -114,7 +114,7 @@
             this.time_panel.Controls.Add(this.panel2);
             this.time_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.time_panel.Location = new System.Drawing.Point(0, 246);
-            this.time_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.time_panel.Margin = new System.Windows.Forms.Padding(4);
             this.time_panel.Name = "time_panel";
             this.time_panel.Size = new System.Drawing.Size(653, 346);
             this.time_panel.TabIndex = 1;
@@ -197,7 +197,7 @@
             this.panel2.Controls.Add(this.label17);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(651, 66);
             this.panel2.TabIndex = 0;
@@ -221,7 +221,7 @@
             this.temp_panel.Controls.Add(this.temp_header_panel);
             this.temp_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.temp_panel.Location = new System.Drawing.Point(0, 0);
-            this.temp_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.temp_panel.Margin = new System.Windows.Forms.Padding(4);
             this.temp_panel.Name = "temp_panel";
             this.temp_panel.Size = new System.Drawing.Size(653, 246);
             this.temp_panel.TabIndex = 0;
@@ -229,41 +229,41 @@
             // outside_panel
             // 
             this.outside_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.outside_panel.Controls.Add(this.label12);
-            this.outside_panel.Controls.Add(this.label13);
+            this.outside_panel.Controls.Add(this.OutsideHum_label);
+            this.outside_panel.Controls.Add(this.OutsideTemp_label);
             this.outside_panel.Controls.Add(this.label14);
             this.outside_panel.Controls.Add(this.label15);
             this.outside_panel.Controls.Add(this.label16);
             this.outside_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.outside_panel.Location = new System.Drawing.Point(323, 64);
-            this.outside_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.outside_panel.Margin = new System.Windows.Forms.Padding(4);
             this.outside_panel.Name = "outside_panel";
             this.outside_panel.Size = new System.Drawing.Size(330, 182);
             this.outside_panel.TabIndex = 3;
             // 
-            // label12
+            // OutsideHum_label
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Silver;
-            this.label12.Location = new System.Drawing.Point(137, 91);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(98, 29);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "37.10%";
+            this.OutsideHum_label.AutoSize = true;
+            this.OutsideHum_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutsideHum_label.ForeColor = System.Drawing.Color.Silver;
+            this.OutsideHum_label.Location = new System.Drawing.Point(137, 91);
+            this.OutsideHum_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.OutsideHum_label.Name = "OutsideHum_label";
+            this.OutsideHum_label.Size = new System.Drawing.Size(98, 29);
+            this.OutsideHum_label.TabIndex = 9;
+            this.OutsideHum_label.Text = "37.10%";
             // 
-            // label13
+            // OutsideTemp_label
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Silver;
-            this.label13.Location = new System.Drawing.Point(137, 46);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(94, 29);
-            this.label13.TabIndex = 8;
-            this.label13.Text = "18.20C";
+            this.OutsideTemp_label.AutoSize = true;
+            this.OutsideTemp_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OutsideTemp_label.ForeColor = System.Drawing.Color.Silver;
+            this.OutsideTemp_label.Location = new System.Drawing.Point(137, 46);
+            this.OutsideTemp_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.OutsideTemp_label.Name = "OutsideTemp_label";
+            this.OutsideTemp_label.Size = new System.Drawing.Size(94, 29);
+            this.OutsideTemp_label.TabIndex = 8;
+            this.OutsideTemp_label.Text = "18.20C";
             // 
             // label14
             // 
@@ -304,41 +304,41 @@
             // indside_panel
             // 
             this.indside_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.indside_panel.Controls.Add(this.label11);
-            this.indside_panel.Controls.Add(this.label10);
+            this.indside_panel.Controls.Add(this.StockHum_label);
+            this.indside_panel.Controls.Add(this.StockTemp_label);
             this.indside_panel.Controls.Add(this.label9);
             this.indside_panel.Controls.Add(this.label8);
             this.indside_panel.Controls.Add(this.label7);
             this.indside_panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.indside_panel.Location = new System.Drawing.Point(0, 64);
-            this.indside_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.indside_panel.Margin = new System.Windows.Forms.Padding(4);
             this.indside_panel.Name = "indside_panel";
             this.indside_panel.Size = new System.Drawing.Size(323, 182);
             this.indside_panel.TabIndex = 4;
             // 
-            // label11
+            // StockHum_label
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(140, 91);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(98, 29);
-            this.label11.TabIndex = 4;
-            this.label11.Text = "55.00%";
+            this.StockHum_label.AutoSize = true;
+            this.StockHum_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StockHum_label.ForeColor = System.Drawing.Color.White;
+            this.StockHum_label.Location = new System.Drawing.Point(140, 91);
+            this.StockHum_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.StockHum_label.Name = "StockHum_label";
+            this.StockHum_label.Size = new System.Drawing.Size(48, 29);
+            this.StockHum_label.TabIndex = 4;
+            this.StockHum_label.Text = "NA";
             // 
-            // label10
+            // StockTemp_label
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(140, 46);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 29);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "15.50C";
+            this.StockTemp_label.AutoSize = true;
+            this.StockTemp_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StockTemp_label.ForeColor = System.Drawing.Color.White;
+            this.StockTemp_label.Location = new System.Drawing.Point(140, 46);
+            this.StockTemp_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.StockTemp_label.Name = "StockTemp_label";
+            this.StockTemp_label.Size = new System.Drawing.Size(48, 29);
+            this.StockTemp_label.TabIndex = 3;
+            this.StockTemp_label.Text = "NA";
             // 
             // label9
             // 
@@ -382,7 +382,7 @@
             this.temp_header_panel.Controls.Add(this.label6);
             this.temp_header_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.temp_header_panel.Location = new System.Drawing.Point(0, 0);
-            this.temp_header_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.temp_header_panel.Margin = new System.Windows.Forms.Padding(4);
             this.temp_header_panel.Name = "temp_header_panel";
             this.temp_header_panel.Size = new System.Drawing.Size(653, 64);
             this.temp_header_panel.TabIndex = 2;
@@ -412,7 +412,7 @@
             this.lagerstatus_panel.Controls.Add(this.label1);
             this.lagerstatus_panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.lagerstatus_panel.Location = new System.Drawing.Point(0, 0);
-            this.lagerstatus_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lagerstatus_panel.Margin = new System.Windows.Forms.Padding(4);
             this.lagerstatus_panel.Name = "lagerstatus_panel";
             this.lagerstatus_panel.Size = new System.Drawing.Size(525, 594);
             this.lagerstatus_panel.TabIndex = 0;
@@ -471,7 +471,7 @@
             this.panel3.Controls.Add(this.lagerstatus_label);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(523, 64);
             this.panel3.TabIndex = 7;
@@ -531,7 +531,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.ClientSize = new System.Drawing.Size(1180, 594);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -573,12 +573,12 @@
         private System.Windows.Forms.Panel temp_header_panel;
         private System.Windows.Forms.Panel indside_panel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label StockHum_label;
+        private System.Windows.Forms.Label StockTemp_label;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label OutsideHum_label;
+        private System.Windows.Forms.Label OutsideTemp_label;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
