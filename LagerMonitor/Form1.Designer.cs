@@ -56,16 +56,15 @@
             this.temp_header_panel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.lagerstatus_panel = new System.Windows.Forms.Panel();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lagerstatus_label = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.stockOverMax_Listbox = new System.Windows.Forms.ListBox();
+            this.stockUnderMin_Listbox = new System.Windows.Forms.ListBox();
+            this.stockMostSold_Listbox = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.right_panel.SuspendLayout();
             this.time_panel.SuspendLayout();
@@ -320,7 +319,7 @@
             // 
             this.StockHum_label.AutoSize = true;
             this.StockHum_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StockHum_label.ForeColor = System.Drawing.Color.White;
+            this.StockHum_label.ForeColor = System.Drawing.Color.Silver;
             this.StockHum_label.Location = new System.Drawing.Point(140, 91);
             this.StockHum_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StockHum_label.Name = "StockHum_label";
@@ -332,7 +331,7 @@
             // 
             this.StockTemp_label.AutoSize = true;
             this.StockTemp_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StockTemp_label.ForeColor = System.Drawing.Color.White;
+            this.StockTemp_label.ForeColor = System.Drawing.Color.Silver;
             this.StockTemp_label.Location = new System.Drawing.Point(140, 46);
             this.StockTemp_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.StockTemp_label.Name = "StockTemp_label";
@@ -344,7 +343,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.ForeColor = System.Drawing.Color.Silver;
             this.label9.Location = new System.Drawing.Point(25, 91);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
@@ -356,7 +355,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.ForeColor = System.Drawing.Color.Silver;
             this.label8.Location = new System.Drawing.Point(25, 46);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
@@ -402,10 +401,9 @@
             // lagerstatus_panel
             // 
             this.lagerstatus_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lagerstatus_panel.Controls.Add(this.label24);
-            this.lagerstatus_panel.Controls.Add(this.label25);
-            this.lagerstatus_panel.Controls.Add(this.label4);
-            this.lagerstatus_panel.Controls.Add(this.label3);
+            this.lagerstatus_panel.Controls.Add(this.stockMostSold_Listbox);
+            this.lagerstatus_panel.Controls.Add(this.stockUnderMin_Listbox);
+            this.lagerstatus_panel.Controls.Add(this.stockOverMax_Listbox);
             this.lagerstatus_panel.Controls.Add(this.panel3);
             this.lagerstatus_panel.Controls.Add(this.label5);
             this.lagerstatus_panel.Controls.Add(this.label2);
@@ -416,54 +414,6 @@
             this.lagerstatus_panel.Name = "lagerstatus_panel";
             this.lagerstatus_panel.Size = new System.Drawing.Size(525, 594);
             this.lagerstatus_panel.TabIndex = 0;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Gold;
-            this.label24.Location = new System.Drawing.Point(20, 501);
-            this.label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(413, 26);
-            this.label24.TabIndex = 11;
-            this.label24.Text = "15 stk. - 1774123 - Spanish Tilly White 12";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Lime;
-            this.label25.Location = new System.Drawing.Point(20, 116);
-            this.label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(400, 26);
-            this.label25.TabIndex = 10;
-            this.label25.Text = "153 stk. - 1234322 - Italian Starkwine 65";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(17, 348);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(401, 26);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "2 stk. - 1774123 - Spanish Tilly White 12";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(17, 303);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(410, 26);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "3 stk. - 1234123 - Staten Island Redwine ";
             // 
             // panel3
             // 
@@ -523,6 +473,42 @@
             this.label1.Size = new System.Drawing.Size(286, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Varer Over Maksimum";
+            // 
+            // stockOverMax_Listbox
+            // 
+            this.stockOverMax_Listbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.stockOverMax_Listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockOverMax_Listbox.ForeColor = System.Drawing.Color.Lime;
+            this.stockOverMax_Listbox.FormattingEnabled = true;
+            this.stockOverMax_Listbox.ItemHeight = 29;
+            this.stockOverMax_Listbox.Location = new System.Drawing.Point(21, 121);
+            this.stockOverMax_Listbox.Name = "stockOverMax_Listbox";
+            this.stockOverMax_Listbox.Size = new System.Drawing.Size(496, 120);
+            this.stockOverMax_Listbox.TabIndex = 12;
+            // 
+            // stockUnderMin_Listbox
+            // 
+            this.stockUnderMin_Listbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.stockUnderMin_Listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockUnderMin_Listbox.ForeColor = System.Drawing.Color.Red;
+            this.stockUnderMin_Listbox.FormattingEnabled = true;
+            this.stockUnderMin_Listbox.ItemHeight = 29;
+            this.stockUnderMin_Listbox.Location = new System.Drawing.Point(21, 317);
+            this.stockUnderMin_Listbox.Name = "stockUnderMin_Listbox";
+            this.stockUnderMin_Listbox.Size = new System.Drawing.Size(496, 120);
+            this.stockUnderMin_Listbox.TabIndex = 13;
+            // 
+            // stockMostSold_Listbox
+            // 
+            this.stockMostSold_Listbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.stockMostSold_Listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockMostSold_Listbox.ForeColor = System.Drawing.Color.Gold;
+            this.stockMostSold_Listbox.FormattingEnabled = true;
+            this.stockMostSold_Listbox.ItemHeight = 29;
+            this.stockMostSold_Listbox.Location = new System.Drawing.Point(21, 499);
+            this.stockMostSold_Listbox.Name = "stockMostSold_Listbox";
+            this.stockMostSold_Listbox.Size = new System.Drawing.Size(496, 91);
+            this.stockMostSold_Listbox.TabIndex = 14;
             // 
             // Form1
             // 
@@ -591,10 +577,9 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ListBox stockOverMax_Listbox;
+        private System.Windows.Forms.ListBox stockUnderMin_Listbox;
+        private System.Windows.Forms.ListBox stockMostSold_Listbox;
     }
 }
 
