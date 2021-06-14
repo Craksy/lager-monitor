@@ -32,11 +32,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.right_panel = new System.Windows.Forms.Panel();
             this.time_panel = new System.Windows.Forms.Panel();
-            this.label22 = new System.Windows.Forms.Label();
+            this.SpigaporeTime_label = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
+            this.londonTime_label = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
+            this.KøbenhavnTime_label = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
@@ -56,15 +56,15 @@
             this.temp_header_panel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.lagerstatus_panel = new System.Windows.Forms.Panel();
+            this.stockMostSold_Listbox = new System.Windows.Forms.ListBox();
+            this.stockUnderMin_Listbox = new System.Windows.Forms.ListBox();
+            this.stockOverMax_Listbox = new System.Windows.Forms.ListBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lagerstatus_label = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.stockOverMax_Listbox = new System.Windows.Forms.ListBox();
-            this.stockUnderMin_Listbox = new System.Windows.Forms.ListBox();
-            this.stockMostSold_Listbox = new System.Windows.Forms.ListBox();
             this.panel1.SuspendLayout();
             this.right_panel.SuspendLayout();
             this.time_panel.SuspendLayout();
@@ -104,11 +104,11 @@
             // time_panel
             // 
             this.time_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.time_panel.Controls.Add(this.label22);
+            this.time_panel.Controls.Add(this.SpigaporeTime_label);
             this.time_panel.Controls.Add(this.label23);
-            this.time_panel.Controls.Add(this.label19);
+            this.time_panel.Controls.Add(this.londonTime_label);
             this.time_panel.Controls.Add(this.label20);
-            this.time_panel.Controls.Add(this.label21);
+            this.time_panel.Controls.Add(this.KøbenhavnTime_label);
             this.time_panel.Controls.Add(this.label18);
             this.time_panel.Controls.Add(this.panel2);
             this.time_panel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -118,17 +118,17 @@
             this.time_panel.Size = new System.Drawing.Size(653, 346);
             this.time_panel.TabIndex = 1;
             // 
-            // label22
+            // SpigaporeTime_label
             // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.Color.Silver;
-            this.label22.Location = new System.Drawing.Point(92, 254);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(378, 29);
-            this.label22.TabIndex = 8;
-            this.label22.Text = "TIRSDAG 08-12-2020 - 21:44:37";
+            this.SpigaporeTime_label.AutoSize = true;
+            this.SpigaporeTime_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SpigaporeTime_label.ForeColor = System.Drawing.Color.Silver;
+            this.SpigaporeTime_label.Location = new System.Drawing.Point(92, 254);
+            this.SpigaporeTime_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SpigaporeTime_label.Name = "SpigaporeTime_label";
+            this.SpigaporeTime_label.Size = new System.Drawing.Size(378, 29);
+            this.SpigaporeTime_label.TabIndex = 8;
+            this.SpigaporeTime_label.Text = "TIRSDAG 08-12-2020 - 21:44:37";
             // 
             // label23
             // 
@@ -142,17 +142,17 @@
             this.label23.TabIndex = 7;
             this.label23.Text = "Singapore";
             // 
-            // label19
+            // londonTime_label
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Silver;
-            this.label19.Location = new System.Drawing.Point(92, 181);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(378, 29);
-            this.label19.TabIndex = 6;
-            this.label19.Text = "TIRSDAG 08-12-2020 - 13:44:37";
+            this.londonTime_label.AutoSize = true;
+            this.londonTime_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.londonTime_label.ForeColor = System.Drawing.Color.Silver;
+            this.londonTime_label.Location = new System.Drawing.Point(92, 181);
+            this.londonTime_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.londonTime_label.Name = "londonTime_label";
+            this.londonTime_label.Size = new System.Drawing.Size(378, 29);
+            this.londonTime_label.TabIndex = 6;
+            this.londonTime_label.Text = "TIRSDAG 08-12-2020 - 13:44:37";
             // 
             // label20
             // 
@@ -166,17 +166,17 @@
             this.label20.TabIndex = 5;
             this.label20.Text = "London";
             // 
-            // label21
+            // KøbenhavnTime_label
             // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Silver;
-            this.label21.Location = new System.Drawing.Point(92, 101);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(378, 29);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "TIRSDAG 08-12-2020 - 14:44:37";
+            this.KøbenhavnTime_label.AutoSize = true;
+            this.KøbenhavnTime_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KøbenhavnTime_label.ForeColor = System.Drawing.Color.Silver;
+            this.KøbenhavnTime_label.Location = new System.Drawing.Point(92, 101);
+            this.KøbenhavnTime_label.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.KøbenhavnTime_label.Name = "KøbenhavnTime_label";
+            this.KøbenhavnTime_label.Size = new System.Drawing.Size(378, 29);
+            this.KøbenhavnTime_label.TabIndex = 4;
+            this.KøbenhavnTime_label.Text = "TIRSDAG 08-12-2020 - 14:44:37";
             // 
             // label18
             // 
@@ -415,6 +415,42 @@
             this.lagerstatus_panel.Size = new System.Drawing.Size(525, 594);
             this.lagerstatus_panel.TabIndex = 0;
             // 
+            // stockMostSold_Listbox
+            // 
+            this.stockMostSold_Listbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.stockMostSold_Listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockMostSold_Listbox.ForeColor = System.Drawing.Color.Gold;
+            this.stockMostSold_Listbox.FormattingEnabled = true;
+            this.stockMostSold_Listbox.ItemHeight = 29;
+            this.stockMostSold_Listbox.Location = new System.Drawing.Point(21, 499);
+            this.stockMostSold_Listbox.Name = "stockMostSold_Listbox";
+            this.stockMostSold_Listbox.Size = new System.Drawing.Size(496, 91);
+            this.stockMostSold_Listbox.TabIndex = 14;
+            // 
+            // stockUnderMin_Listbox
+            // 
+            this.stockUnderMin_Listbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.stockUnderMin_Listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockUnderMin_Listbox.ForeColor = System.Drawing.Color.Red;
+            this.stockUnderMin_Listbox.FormattingEnabled = true;
+            this.stockUnderMin_Listbox.ItemHeight = 29;
+            this.stockUnderMin_Listbox.Location = new System.Drawing.Point(21, 317);
+            this.stockUnderMin_Listbox.Name = "stockUnderMin_Listbox";
+            this.stockUnderMin_Listbox.Size = new System.Drawing.Size(496, 120);
+            this.stockUnderMin_Listbox.TabIndex = 13;
+            // 
+            // stockOverMax_Listbox
+            // 
+            this.stockOverMax_Listbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
+            this.stockOverMax_Listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockOverMax_Listbox.ForeColor = System.Drawing.Color.Lime;
+            this.stockOverMax_Listbox.FormattingEnabled = true;
+            this.stockOverMax_Listbox.ItemHeight = 29;
+            this.stockOverMax_Listbox.Location = new System.Drawing.Point(21, 121);
+            this.stockOverMax_Listbox.Name = "stockOverMax_Listbox";
+            this.stockOverMax_Listbox.Size = new System.Drawing.Size(496, 120);
+            this.stockOverMax_Listbox.TabIndex = 12;
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -474,42 +510,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Varer Over Maksimum";
             // 
-            // stockOverMax_Listbox
-            // 
-            this.stockOverMax_Listbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.stockOverMax_Listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockOverMax_Listbox.ForeColor = System.Drawing.Color.Lime;
-            this.stockOverMax_Listbox.FormattingEnabled = true;
-            this.stockOverMax_Listbox.ItemHeight = 29;
-            this.stockOverMax_Listbox.Location = new System.Drawing.Point(21, 121);
-            this.stockOverMax_Listbox.Name = "stockOverMax_Listbox";
-            this.stockOverMax_Listbox.Size = new System.Drawing.Size(496, 120);
-            this.stockOverMax_Listbox.TabIndex = 12;
-            // 
-            // stockUnderMin_Listbox
-            // 
-            this.stockUnderMin_Listbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.stockUnderMin_Listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockUnderMin_Listbox.ForeColor = System.Drawing.Color.Red;
-            this.stockUnderMin_Listbox.FormattingEnabled = true;
-            this.stockUnderMin_Listbox.ItemHeight = 29;
-            this.stockUnderMin_Listbox.Location = new System.Drawing.Point(21, 317);
-            this.stockUnderMin_Listbox.Name = "stockUnderMin_Listbox";
-            this.stockUnderMin_Listbox.Size = new System.Drawing.Size(496, 120);
-            this.stockUnderMin_Listbox.TabIndex = 13;
-            // 
-            // stockMostSold_Listbox
-            // 
-            this.stockMostSold_Listbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.stockMostSold_Listbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockMostSold_Listbox.ForeColor = System.Drawing.Color.Gold;
-            this.stockMostSold_Listbox.FormattingEnabled = true;
-            this.stockMostSold_Listbox.ItemHeight = 29;
-            this.stockMostSold_Listbox.Location = new System.Drawing.Point(21, 499);
-            this.stockMostSold_Listbox.Name = "stockMostSold_Listbox";
-            this.stockMostSold_Listbox.Size = new System.Drawing.Size(496, 91);
-            this.stockMostSold_Listbox.TabIndex = 14;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -568,11 +568,11 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label SpigaporeTime_label;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label londonTime_label;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label KøbenhavnTime_label;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label17;

@@ -20,6 +20,37 @@ namespace LagerMonitor
             InitializeComponent();
             client = new MonitorService.monitorSoapClient();
             Task.Run(FetchData);
+            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+            timer.Interval = 1000;
+            timer.Tick += this.onTick;
+            timer.Start();
+        }
+
+        private TimeZoneInfo ukTimeZone, spTimeZone, kbTimeZone;
+        private DateTime ukTime, spTime, kbTime;
+        private string uk_str, sp_str, kb_str;
+
+      
+
+        private void onTick(object sender, EventArgs e)
+        {
+            kbTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Romance Standard Time");
+            kbTime = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.Local, kbTimeZone);
+            kb_str = kbTime.ToString("dddd/dd/MM/yyyy HH:mm:ss");
+            RefreshLabel(kb_str, KøbenhavnTime_label);
+
+
+            ukTimeZone = TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time");
+            ukTime = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.Local, ukTimeZone);
+            uk_str = ukTime.ToString("dddd/dd/MM/yyyy HH:mm:ss");
+            RefreshLabel(uk_str, londonTime_label);
+
+            spTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Singapore Standard Time");
+            spTime = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.Local, spTimeZone);
+            sp_str = spTime.ToString("dddd/dd/MM/yyyy HH:mm:ss");
+            RefreshLabel(sp_str, SpigaporeTime_label);
+
+
         }
 
         private async Task FetchData()
@@ -62,6 +93,8 @@ namespace LagerMonitor
                 RefreshBox(stringarray, stockMostSold_Listbox);
 
                 Thread.Sleep(60000);
+
+
 
             }
         }
