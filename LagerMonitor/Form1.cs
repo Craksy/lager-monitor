@@ -21,13 +21,18 @@ namespace LagerMonitor
         public Form1()
         {
             InitializeComponent();
+
+            //opratter clienten
             client = new MonitorService.monitorSoapClient();
             Task.Run(FetchData);
+
+            // laver en timer
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
             timer.Interval = 1000;
             timer.Tick += this.onTick;
             timer.Start();
 
+            // laver en timer
             System.Windows.Forms.Timer rssTime = new System.Windows.Forms.Timer();
             rssTime.Interval = 200;
             rssTime.Tick += this.rssTick;
