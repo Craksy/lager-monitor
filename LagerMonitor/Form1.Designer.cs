@@ -65,6 +65,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.right_panel.SuspendLayout();
             this.time_panel.SuspendLayout();
@@ -104,6 +105,7 @@
             // time_panel
             // 
             this.time_panel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.time_panel.Controls.Add(this.label3);
             this.time_panel.Controls.Add(this.SpigaporeTime_label);
             this.time_panel.Controls.Add(this.label23);
             this.time_panel.Controls.Add(this.londonTime_label);
@@ -422,9 +424,9 @@
             this.stockMostSold_Listbox.ForeColor = System.Drawing.Color.Gold;
             this.stockMostSold_Listbox.FormattingEnabled = true;
             this.stockMostSold_Listbox.ItemHeight = 29;
-            this.stockMostSold_Listbox.Location = new System.Drawing.Point(21, 499);
+            this.stockMostSold_Listbox.Location = new System.Drawing.Point(21, 470);
             this.stockMostSold_Listbox.Name = "stockMostSold_Listbox";
-            this.stockMostSold_Listbox.Size = new System.Drawing.Size(496, 91);
+            this.stockMostSold_Listbox.Size = new System.Drawing.Size(496, 62);
             this.stockMostSold_Listbox.TabIndex = 14;
             // 
             // stockUnderMin_Listbox
@@ -479,7 +481,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Silver;
-            this.label5.Location = new System.Drawing.Point(19, 450);
+            this.label5.Location = new System.Drawing.Point(16, 440);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(222, 29);
@@ -509,6 +511,16 @@
             this.label1.Size = new System.Drawing.Size(286, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "Varer Over Maksimum";
+            // 
+            // label3
+            // 
+            this.label3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Silver;
+            this.label3.Location = new System.Drawing.Point(0, 307);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(651, 37);
+            this.label3.TabIndex = 9;
             // 
             // Form1
             // 
@@ -580,6 +592,7 @@
         private System.Windows.Forms.ListBox stockOverMax_Listbox;
         private System.Windows.Forms.ListBox stockUnderMin_Listbox;
         private System.Windows.Forms.ListBox stockMostSold_Listbox;
+        private System.Windows.Forms.Label label3;
     }
 }
 
