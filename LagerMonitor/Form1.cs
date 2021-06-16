@@ -18,29 +18,40 @@ namespace LagerMonitor
         private double insideTemp, insideHum, outsideTemp, outsideHum;
         private string rssText;
         private MonitorService.monitorSoapClient client;
+
+        private TimeZoneInfo ukTimeZone, spTimeZone, kbTimeZone;
+        private DateTime ukTime, spTime, kbTime;
+        private string uk_str, sp_str, kb_str;
         public Form1()
         {
             InitializeComponent();
 
-            //opratter clienten
+            //Opretter klienten og starter en task som peridisk henter data i baggrunden
             client = new MonitorService.monitorSoapClient();
             Task.Run(FetchData);
 
-            // laver en timer
-            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
-            timer.Interval = 1000;
-            timer.Tick += this.onTick;
-            timer.Start();
+            // laver en timer til uret som ticker en gang i sekundet.
+            System.Windows.Forms.Timer clockTimer = new System.Windows.Forms.Timer();
+            clockTimer.Interval = 1000;
+            clockTimer.Tick += ClockTick;
+            clockTimer.Start();
 
-            // laver en timer
-            System.Windows.Forms.Timer rssTime = new System.Windows.Forms.Timer();
-            rssTime.Interval = 200;
-            rssTime.Tick += this.rssTick;
-            rssTime.Start();
-            ReadFeed();
+            // laver en timer til det scrollende rss-feed som ticker 5 gange i sekundet.
+            System.Windows.Forms.Timer rssTimer = new System.Windows.Forms.Timer();
+            rssTimer.Interval = 200;
+            rssTimer.Tick += this.RssTick;
+            rssTimer.Start();
         }
 
-        private void rssTick(object sender, EventArgs e)
+
+        /// <summary>
+        /// Reagerer på et Tick event fra `rssTimer`.
+        /// Hvis der er mere text tilbage i variablen `rssText`, fjern det
+        /// første bogstav for at give en scrollende effekt.
+        /// 
+        /// Hvis ikke, så kald metoden `ReadFeed`.
+        /// </summary>
+        private void RssTick(object sender, EventArgs e)
         {
             if (rssText.Length > 0)
             {
@@ -53,31 +64,34 @@ namespace LagerMonitor
             }
         }
 
-        private TimeZoneInfo ukTimeZone, spTimeZone, kbTimeZone;
-        private DateTime ukTime, spTime, kbTime;
-        private string uk_str, sp_str, kb_str;
 
-      
-
-        private void onTick(object sender, EventArgs e)
+        /// <summary>
+        /// Reagere på et Tick event fra `clockTimer`
+        /// Konverterer tiden til en række forskellige tidszoner og formaterer de tilsvarende labels med resultatet.
+        /// </summary>
+        private void ClockTick(object sender, EventArgs e)
         {
             kbTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Romance Standard Time");
             kbTime = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.Local, kbTimeZone);
             kb_str = kbTime.ToString("dddd/dd/MM/yyyy HH:mm:ss");
-            RefreshLabel(kb_str, KøbenhavnTime_label);
+            KøbenhavnTime_label.Text = kb_str;
 
             ukTimeZone = TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time");
             ukTime = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.Local, ukTimeZone);
             uk_str = ukTime.ToString("dddd/dd/MM/yyyy HH:mm:ss");
-            RefreshLabel(uk_str, londonTime_label);
+            londonTime_label.Text = uk_str;
 
             spTimeZone = TimeZoneInfo.FindSystemTimeZoneById("Singapore Standard Time");
             spTime = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.Local, spTimeZone);
             sp_str = spTime.ToString("dddd/dd/MM/yyyy HH:mm:ss");
-            RefreshLabel(sp_str, SpigaporeTime_label);
+            SpigaporeTime_label.Text = sp_str;
         }
 
 
+        /// <summary>
+        /// Læser et rrs-feed fra Nordjyske og formaterer variablen `rssText` med resultatet.
+        /// For hver nyhed indsæt dato/tid, titlen og resume. Adskil
+        /// </summary>
         private void ReadFeed()
         {
             string url = "https://nordjyske.dk/rss/nyheder";
@@ -85,13 +99,20 @@ namespace LagerMonitor
             SyndicationFeed feed = SyndicationFeed.Load(reader);
             foreach (SyndicationItem item in feed.Items)
             {
-                String subject = item.Title.Text;
-                String summary = item.Summary.Text;
+                string subject = item.Title.Text;
+                string summary = item.Summary.Text;
                 string dato = item.PublishDate.DateTime.ToString();
                 rssText += $"[{dato}]  {subject} -- {subject}                                       ";
             }
         }
 
+        /// <summary>
+        /// Henter monitoreringsdata asynkront i baggrunden.
+        /// Dette gøres for at undgå at blocke UI-tråden mens der kommunikeres med webservicen.
+        /// 
+        /// Bruger hjælpe metoderne `RefreshLabel` og `RefreshBox` til at
+        /// opdatere UI elementer uden at forsage cross-thread collisions.
+        /// </summary>
         private async Task FetchData()
         {
             while (true)
@@ -139,11 +160,18 @@ namespace LagerMonitor
             }
         }
 
+        /// <summary>
+        /// Opdater en ListBox med ny data.
+        /// Hvis denne metoder bliver kaldt fra UI-tråden så opdater `box` med data fra `newarray`
+        /// Ellers så brug Invoke til at kalde den igen, men fra UI tråden.
+        /// </summary>
+        /// <param name="newarray">Array med strenge som indeholder den nye data</param>
+        /// <param name="box">En ListBox control som skal opdateres.</param>
         private void RefreshBox(MonitorService.ArrayOfString newarray, ListBox box)
         {
-            if (box.InvokeRequired)
+            if (this.InvokeRequired)
             {
-                box.Invoke(new Action(() => RefreshBox(newarray, box)));
+                this.Invoke(new Action(() => RefreshBox(newarray, box)));
             }
             else
             {
@@ -155,16 +183,19 @@ namespace LagerMonitor
             }
         }
 
+        /// <summary>
+        /// Opdater et Label med ny data.
+        /// Hvis denne metoder bliver kaldt fra UI-tråden så opdater `label` med data fra `newtext`
+        /// Ellers så brug Invoke til at kalde den igen, men fra UI tråden.
+        /// </summary>
+        /// <param name="newtext"></param>
+        /// <param name="label"></param>
         private void RefreshLabel(string newtext, Control label)
         {
-            if (label.InvokeRequired)
-            {
-                label.Invoke(new Action(() => RefreshLabel(newtext, label)));
-            }
+            if (this.InvokeRequired)
+                this.Invoke(new Action(() => RefreshLabel(newtext, label)));
             else
-            {
                 label.Text = newtext;
-            }
         }
     }
 }
