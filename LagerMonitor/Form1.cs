@@ -16,7 +16,7 @@ namespace LagerMonitor
     public partial class Form1 : Form
     {
         private double insideTemp, insideHum, outsideTemp, outsideHum;
-        private string rssText;
+        private string rssText = "";
         private MonitorService.monitorSoapClient client;
 
         private TimeZoneInfo ukTimeZone, spTimeZone, kbTimeZone;
@@ -94,6 +94,7 @@ namespace LagerMonitor
         /// </summary>
         private void ReadFeed()
         {
+            //TODO: trycatch here. breaks if offline.
             string url = "https://nordjyske.dk/rss/nyheder";
             XmlReader reader = XmlReader.Create(url);
             SyndicationFeed feed = SyndicationFeed.Load(reader);
