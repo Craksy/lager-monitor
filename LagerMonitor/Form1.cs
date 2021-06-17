@@ -103,7 +103,7 @@ namespace LagerMonitor
                 string subject = item.Title.Text;
                 string summary = item.Summary.Text;
                 string dato = item.PublishDate.DateTime.ToString();
-                rssText += $"[{dato}]  {subject} -- {subject}                                       ";
+                rssText += $"[{dato}]  {subject} -- {summary}                                       ";
             }
         }
 
